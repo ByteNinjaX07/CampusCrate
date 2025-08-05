@@ -1,0 +1,32 @@
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(44, 103, 231);
+    
+}
+
+.btn-div{
+    display: flex;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.btn{
+    height: 35px;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.register{
+    background-color: blue;
+    color: white;
+    border: none;
+}
+
+.login{
+    color: blue;
+    background-color: white;
+    border-color: blue;
+}
