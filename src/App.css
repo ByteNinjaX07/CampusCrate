@@ -10,7 +10,7 @@ h1 {
   text-align: center;
   color: rgb(0, 0, 0);
   font-family: 'Courier New', Courier, monospace;
-  background-color: brown;
+  background-color: rgb(255, 250, 250);
 }
 
 button {

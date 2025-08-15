@@ -7,12 +7,14 @@ import PostFound from './pages/PostFound.jsx'
 import LandingPage from './pages/LandingPage.jsx' 
 import { useAuth0 } from '@auth0/auth0-react';
 import Navbar from './components/Navbar.jsx';
+import { useState } from 'react';
 
 function App() {
-      
+
     const { user,loginWithRedirect,isAuthenticated } = useAuth0();
       // Assuming props.isLoggedIn is passed to the component to check login status
       // If not logged in, show the login/signup options
+    
     return(
       <>
       <div>
@@ -23,7 +25,7 @@ function App() {
         </p>
         <div>
           {isAuthenticated ? (<Dashboard/>) : (
-            <button onClick={(e) => loginWithRedirect()}>Register/Login</button>
+            <button onClick={(e) => loginWithRedirect(isAuthenticated)}>Register/Login</button>
           )}
         </div>
         

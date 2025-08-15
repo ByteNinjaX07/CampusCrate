@@ -1,30 +1,42 @@
-const {
+import { model, Schema } from "mongoose";
+
+  const {
     Schema,
     model
   } = require("mongoose");
-  
-  const MySchema = new Schema({
-    Title: {
-      type: String,
-      required: true,
-      maxlength: 50
-    },
-    Category: {
-        type:String,
-        required:true
-    },
-    Description: {
-        type:String,
-        required:true
 
+  const itemSchema = new Schema({
+
+    claimQuestion: {type:String},
+
+    type: { type: String, enum: ["lost", "found"], required: true } ,
+    
+    title: {
+      type: String,
+      required: false,
     },
-    DateLost: {
+
+    category: {
+      type:String,
+      required:true
+    },
+
+    description: {
+      type:String,
+      required:true
+    },
+
+    dateLost: {
       type: Date,
       default: Date.now,
       required: true
     },
+
+    image: {
+      type: File,
+      required: false
+    },
+
   });
 
-  const itemModel = model("item", MySchema)
-
-module.exports = itemModel
+module.exports = mongoose.model("Item", itemSchema);

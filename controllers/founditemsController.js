@@ -2,13 +2,13 @@ import { Schema, model } from "mongoose";
 
 const itemModel=require('../models/itemModel.js')
 
-const getLost = async (req, res) => {
+const getFound = async (req, res) => {
     try {
     const items = await itemModel.find();
     res.json(items)
   } catch (error) {
-    res.status(500).send("Error fetching lost items");
+    res.status(500).send("Error fetching found items");
   }
 }
 
-module.exports = { getLost };
+module.exports = { getFound };

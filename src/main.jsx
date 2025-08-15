@@ -9,32 +9,54 @@ import PostLost from './pages/PostLost.jsx';
 import PostFound from './pages/PostFound.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 import Navbar from './components/Navbar.jsx';
+import ItemCard from './components/ItemCard.jsx';
 
 // Create a router with nested routes
 
 const router = createBrowserRouter([
-  {
-    path: "/",          // Main layout route
-    element: <App />,   // App component with Navbar + Outlet
-    children: [
       {
-        path: "/lp",
-        element: <LandingPage />,
+        path: "/",
+        element: 
+        <div>
+          <LandingPage />
+        </div>
+        ,
       },
       {
         path: "/Dashboard",
-        element: <Dashboard />,
-      },    
+        element: 
+        <div>
+          <Navbar />
+          <Dashboard />
+        </div>
+        ,
+      },
+      {
+        path:"/Dashboard/LostItems",
+        element:<ItemCard/>
+      },
+      {
+        path:"/Dashboard/FoundItems",
+        element:<ItemCard/>
+      },
       {
         path: "/PostLost",
-        element: <PostLost />,
+        element:
+        <div>
+          <Navbar />
+          <PostLost />
+        </div>
+        ,
       },
       {
         path: "/PostFound",
-        element: <PostFound />,
+        element: 
+        <div>
+          <Navbar />
+          <PostFound />
+        </div>
+        ,
       },
-    ],
-  },
 ]);
 
 const root = createRoot(document.getElementById('root'));
@@ -44,7 +66,7 @@ root.render(
     domain="dev-7q5xjqy43a8fheje.us.auth0.com"
     clientId="9CTRRUliurOnb6rFVxvtDnzsNnRl8HtJ"
     authorizationParams={{
-      redirect_uri: window.location.origin
+      redirect_uri: 'http://localhost:5173/Dashboard',
     }}
   >
     <StrictMode>

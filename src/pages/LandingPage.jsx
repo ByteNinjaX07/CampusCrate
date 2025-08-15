@@ -3,9 +3,7 @@ import './LandingPage.css'
 import Dashboard from './Dashboard';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const isLoggedIn = false; // This should be dynamically set based on authentication status
-
-const LandingPage = (props) => {
+const LandingPage = () => {
 
   const { loginWithRedirect } = useAuth0();
   // Assuming props.isLoggedIn is passed to the component to check login status
@@ -13,12 +11,24 @@ const LandingPage = (props) => {
   return(
 
     <div>
+      <a href="localhost:5173">
+        <h1>CampusCrate.in</h1>
+      </a>
+      
 
-      <h1>Welcome to CampusCrate</h1>
-      <p>
-        Lost & Found System for college
-      </p>
-      <button onClick={() => loginWithRedirect()}>Register/Login</button>
+      <div className='short-desc'>
+
+        <p id='p1'>
+          Lost & Found 
+        </p>
+        <p id='p2'>
+          System for college
+        </p>
+          
+        <button onClick={() => loginWithRedirect()}>Register/Login</button>
+      
+      </div>
+      
       
     </div>
   )

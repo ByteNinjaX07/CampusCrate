@@ -1,6 +1,33 @@
+h1{
+    background-color: transparent;
+}
+
 .btn{
-    margin-top: 200px;
-    align-self: center;
-    justify-self: center;
-    padding: 10px 20px;
+    margin-top: 150px;
+}
+
+.dashboard-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+
+}
+
+btn{
+    height: 80px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: rgb(63, 73, 251);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#user-greeting{
+    font-size: 7rem;
+    font-family: cursive;
+    color: burlywood;
 }

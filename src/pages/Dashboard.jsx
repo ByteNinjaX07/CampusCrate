@@ -3,41 +3,52 @@ import './Dashboard.css'
 import Navbar from '../components/Navbar';
 import PostFound from "./PostFound";
 import PostLost from "./PostLost";
+import { Link } from "react-router-dom";
+import ItemCard from "../components/ItemCard";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState} from "react";
+
 const Dashboard = () => {
+      const navigate = useNavigate();
+      const { logout, user} = useAuth0();
 
-  
-  const handlePostFound = () => {
-    return(
-      <div>
-        <PostFound />
-      </div>
-    )
-  };
+      function handleLost() {
+        navigate('/PostLost');
+      }
 
-  const handlePostLost = () => {
-    return(
-      <div>
-        <PostLost />
-      </div>
-    )
-  };
+      function handleFound() {
+        navigate('/PostFound');
+      }
 
-  return (
-    <div>
-
-      <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-      Log Out
-      </button>
-
-    
-      <h1>HELLO jee </h1>
-      <p>Welcome to the Dashboard!</p>
-      <p>Here you can manage your lost and found items.</p>
-
-      <button onClick={handlePostFound} className="btn">I Found Something</button>
-      <button onClick={handlePostLost} className="btn">I Lost Something</button>
-    </div>
-  )
-}
+    return (
+      <>
+        <div>
+          <h1 id="user-greeting">HELLO user</h1>
+          <h1>Welcome to the Dashboard!</h1>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/Dashboard/LostItems">Lost Items</Link>
+                </li>
+                <li>
+                  <Link to="Dashboard/FoundItems">Found Items</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="dashboard-buttons">
+            <button onClick={handleFound} className="btn">I Found </button>
+            <button onClick={handleLost} className="btn">I Lost </button>
+          </div>
+          
+          <div>
+            <ItemCard />
+          </div>
+        
+        </div>
+      </>
+      );
+} 
 
 export default Dashboard

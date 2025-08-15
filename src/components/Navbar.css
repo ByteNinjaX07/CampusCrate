@@ -1,11 +1,17 @@
+body{
+    padding: 4px;
+}
+
 nav{
     height: 40px;
+    background-color: transparent;
     
-    background-color: rgb(216, 216, 212);
-    margin: 0 auto;
+    border-radius: 16px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    color: #ffffff;
 }
 
 nav ul{
@@ -13,4 +19,20 @@ nav ul{
     justify-content: space-evenly;
     align-items: center;
     list-style-type: none;
+    color: #ffffff;
+}
+
+nav ul li{
+    font-size: 1.2rem;
+    color: #ffffff;
+    list-style-type: none;
+    text-decoration: none;
+    
+}
+
+#logout-btn{
+    background-color: hsl(0, 57%, 62%);
+    border: 2.5px solid #9a1515;
+    height: 2.3rem;
+    padding: 1px;
 }

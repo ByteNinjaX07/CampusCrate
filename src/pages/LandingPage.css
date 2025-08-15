@@ -3,7 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(44, 103, 231);
+    background-color: rgb(80, 94, 126);
+    
+}
+
+
+a{
+    text-decoration: none;
     
 }
 
@@ -29,4 +35,29 @@
     color: blue;
     background-color: white;
     border-color: blue;
+}
+
+.short-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 125px;
+    padding: 0;
+}
+
+#p1{
+    font-size: 8rem;
+    color: rgb(218, 42, 42);
+    font-family: fantasy;
+    font-weight: lighter;
+    margin: 0;
+}
+
+#p2{
+    font-size: 2rem;
+    color: rgb(105, 99, 99);
+    text-align: start;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
 }
