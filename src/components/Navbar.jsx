@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Dashboard from '../pages/Dashboard';
-import PostLost from '../pages/PostLost';
-import PostFound from '../pages/PostFound';
+import { useAuth0 } from '@auth0/auth0-react'; // Added missing import
 import './Navbar.css';
 
 const Navbar = () => {
+  const { logout } = useAuth0(); // Added missing hook
+
   return (
     <div>
       <nav>
@@ -23,9 +23,13 @@ const Navbar = () => {
             <li>
               <Link to="/PostFound">Post Found Item</Link>
             </li>
-            
             <li>
-              <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} id='logout-btn'>Log Out</button>   
+              <button 
+                onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} 
+                id='logout-btn'
+              >
+                Log Out
+              </button>   
             </li>
           </ul>
         </span>
@@ -34,4 +38,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

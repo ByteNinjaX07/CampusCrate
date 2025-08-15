@@ -1,14 +1,11 @@
-import { Schema, model } from "mongoose";
+import Item from '../models/itemModel.js';
 
-const itemModel=require('../models/itemModel.js')
-
-const getLost = async (req, res) => {
-    try {
-    const items = await itemModel.find();
-    res.json(items)
+export const getLost = async (req, res) => {
+  try {
+    const items = await Item.find({ type: "lost" }); // Filter by type
+    res.json(items);
   } catch (error) {
+    console.error(error);
     res.status(500).send("Error fetching lost items");
   }
 }
-
-module.exports = { getLost };

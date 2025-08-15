@@ -1,21 +1,21 @@
-import { Schema, model } from "mongoose";
+import Item from '../models/itemModel.js'; // Import the model
 
-const postfound= async(req, res) => {
+export const postfound = async (req, res) => {
   try {
-    const { Title, Category, Description, DateLost, Image } = req.body;
+    const { title, category, description, dateLost, image } = req.body; // Fixed casing
     const newItem = new Item({
-      Title,
-      Category,
-      Description,
-      DateLost,
-      Image: Image ? Image : null 
+      type: "found", // Added type field
+      title,
+      category,
+      description,
+      dateLost,
+      image: image ? image : null 
     });
-    await newItem.save(); // Save to DB
+    await newItem.save();
     res.status(201).json({ message: 'Item posted successfully!' });
   }
   catch (error) {
+    console.error(error);
     res.status(500).json({ error: 'Error posting item' });
   }
 }
-
-module.exports={postfound}
