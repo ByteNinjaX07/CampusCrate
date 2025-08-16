@@ -18,10 +18,10 @@ const Navbar = () => {
               <Link to="/Dashboard">Dashboard</Link>
             </li>
             <li>
-              <Link to="/PostLost">Post Lost Item</Link>
+              <Link to="/Dashboard/LostItems">View Lost Items</Link>
             </li>
             <li>
-              <Link to="/PostFound">Post Found Item</Link>
+              <Link to="/Dashboard/FoundItems">View Found Items</Link>
             </li>
             <li>
               <button 

@@ -56,10 +56,8 @@ const ItemCard = ({ type }) => {
       {!type && (
         <div style={{ marginBottom: '20px', textAlign: 'center' }}>
           <Link to='/Dashboard/LostItems' style={{ marginRight: '20px' }}>
-            View Lost Items
           </Link>
           <Link to='/Dashboard/FoundItems'>
-            View Found Items
           </Link>
         </div>
       )}
